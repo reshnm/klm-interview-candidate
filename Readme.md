@@ -1,6 +1,7 @@
-# Graph Challenge
+# Graph Challenge - Candidate Version
 
 This challenge is about representing a directed graph and implementing some methods.
+> Please treat the content of this challenge confidential. 
 
 Sample Graph:
 ```
