@@ -2,7 +2,7 @@ package graph
 
 // Graph represents a directed graph of nodes with embedded edges.
 // The graph is represented as an adjacency list.
-// The following would  be an example graph:
+// The following would be an example graph:
 // +---+
 // | 0 |
 // +---+

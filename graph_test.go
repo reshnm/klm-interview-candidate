@@ -57,14 +57,14 @@ func TestGet(t *testing.T) {
 	expectedSize++
 
 	if capacity := graph.Size(); capacity != expectedSize {
-		t.Errorf("tree does not have expected size (got %d want %d)", capacity, expectedSize)
+		t.Errorf("graph does not have expected size (got %d want %d)", capacity, expectedSize)
 	}
 	if node := graph.GetNode(0); node == nil {
-		t.Errorf("node sould not be nil")
+		t.Errorf("node should not be nil")
 	}
 }
 
-func TestAddEgde(t *testing.T) {
+func TestAddEdge(t *testing.T) {
 	var (
 		expectedSize = 0
 		graph        = NewGraph(10)
@@ -84,7 +84,7 @@ func TestAddEgde(t *testing.T) {
 	graph.AddEdge(0, 1)
 
 	if node := graph.GetNode(0); node == nil {
-		t.Errorf("node sould not be nil")
+		t.Errorf("node should not be nil")
 	} else {
 		if node.connectedTo[0] != 1 {
 			t.Errorf("node should be connected to 1")
@@ -140,9 +140,9 @@ func TestIncomingEdges(t *testing.T) {
 	}
 }
 
-func TestNeighboors(t *testing.T) {
+func TestNeighbours(t *testing.T) {
 	var (
-		neighboorsForGrade = map[int][]int{
+		neighboursForLevel = map[int][]int{
 			1: {3, 4},
 			2: {9},
 			3: {5, 6},
@@ -150,9 +150,9 @@ func TestNeighboors(t *testing.T) {
 		graph = buildTestGraph()
 	)
 
-	for nLevel, expectedNeighboors := range neighboorsForGrade {
-		if neighboors := graph.GetNeighbours(8, nLevel); !reflect.DeepEqual(neighboors, expectedNeighboors) {
-			t.Errorf("neighboors %v level does not have expected (got %v want %v)", nLevel, neighboors, expectedNeighboors)
+	for nLevel, expectedNeighbours := range neighboursForLevel {
+		if neighbours := graph.GetNeighbours(8, nLevel); !reflect.DeepEqual(neighbours, expectedNeighbours) {
+			t.Errorf("neighbours %v level does not have expected (got %v want %v)", nLevel, neighbours, expectedNeighbours)
 		}
 	}
 
