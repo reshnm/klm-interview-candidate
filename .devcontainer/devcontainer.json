@@ -1,0 +1,22 @@
+{
+	"name": "Graph Challenge (Go)",
+	"image": "mcr.microsoft.com/devcontainers/go:1.27",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"golang.go"
+			],
+			"settings": {
+				"go.toolsManagement.checkForUpdates": "local",
+				"go.useLanguageServer": true,
+				"[go]": {
+					"editor.formatOnSave": true,
+					"editor.codeActionsOnSave": {
+						"source.organizeImports": "explicit"
+					}
+				}
+			}
+		}
+	},
+	"postCreateCommand": "go mod download && go build ./... && go test ./... || true"
+}
